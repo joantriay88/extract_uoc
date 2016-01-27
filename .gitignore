@@ -1,0 +1,14 @@
+#Ignore python classes
+*.pyc
+#Ignore Heatmap files
+*.tsv
+*.html
+#Exclude this file because is the base of Heatmaps
+!base.html
+#Ignore data files
+*.txt
+#Exclude this file because is the base of matrix connections days
+!interaction_events.txt
+*.json
+#Ignore system files
+*.DS_Store
