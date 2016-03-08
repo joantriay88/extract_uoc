@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from settings import TEXT_FILES_PATH
 
 
 class WriteData:
@@ -10,7 +11,7 @@ class WriteData:
     This method writhes in a file a video dictionary data calculated
     '''
     def writeInFileDictSampleData(self, dict_data, name_file):
-        fileToWrite = open("files/"+name_file, 'a')
+        fileToWrite = open(TEXT_FILES_PATH+name_file, 'a')
         for video in self.ids_video:
             line = str(video)+","+str(dict_data[video])+"\n"
             fileToWrite.write(line)
@@ -21,7 +22,7 @@ class WriteData:
     This method writes in a file a video student dictionary data calculated
     '''
     def writeInFileDictComplexData(self, dict_data, name_file):
-        fileToWrite = open("files/"+name_file, 'a')
+        fileToWrite = open(TEXT_FILES_PATH+name_file, 'a')
         for stud in self.usernames:
             line = stud+","
             counter_last_element = 1
@@ -39,7 +40,7 @@ class WriteData:
     This method writes in a file a list based on strings.
     '''
     def writeInFileStringList(self, strList, file_name):
-        fileToWrite = open("files/"+file_name, 'a')
+        fileToWrite = open(TEXT_FILES_PATH+file_name, 'a')
         for line in strList:
             fileToWrite.write(str(line))
         fileToWrite.close()
@@ -49,7 +50,7 @@ class WriteData:
     This method writes in a file the names of students
     '''
     def writeName(self, name_file):
-        fileToWrite = open('files/'+name_file, 'a')
+        fileToWrite = open(TEXT_FILES_PATH+name_file, 'a')
         for name in self.usernames:
             fileToWrite.write(str(name)+"\n")
         fileToWrite.close()
@@ -68,75 +69,75 @@ class WriteData:
         return str(div[0])
 
     def join_video_data(self):
-        f = open("files/title_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"title_v.txt", "r")
         title = f.readlines()
         f.close()
 
-        f = open("files/duration_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"duration_v.txt", "r")
         duration = f.readlines()
         f.close()
 
-        f = open("files/n_plays_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_plays_v.txt", "r")
         plays = f.readlines()
         f.close()
 
-        f = open("files/n_stops_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_stops_v.txt", "r")
         stops = f.readlines()
         f.close()
 
-        f = open("files/n_pauses_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_pauses_v.txt", "r")
         pauses = f.readlines()
         f.close()
 
-        f = open("files/n_seekBack_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_seekBack_v.txt", "r")
         seekBacks = f.readlines()
         f.close()
 
-        f = open("files/n_seekFor_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_seekFor_v.txt", "r")
         seekFors = f.readlines()
         f.close()
 
-        f = open("files/n_speedUp_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_speedUp_v.txt", "r")
         speedUps = f.readlines()
         f.close()
 
-        f = open("files/n_speedDown_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_speedDown_v.txt", "r")
         speedDowns = f.readlines()
         f.close()
 
-        f = open("files/av_speedUp_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_speedUp_v.txt", "r")
         av_speedUp = f.readlines()
         f.close()
 
-        f = open("files/av_speedDown_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_speedDown_v.txt", "r")
         av_speedDown = f.readlines()
         f.close()
 
-        f = open("files/acc_t_seekBack_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"acc_t_seekBack_v.txt", "r")
         acc_t_seekBack = f.readlines()
         f.close()
 
-        f = open("files/acc_t_seekFor_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"acc_t_seekFor_v.txt", "r")
         acc_t_seekFor = f.readlines()
         f.close()
 
-        f = open("files/av_t_seekBack_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_t_seekBack_v.txt", "r")
         av_t_seekBack = f.readlines()
         f.close()
 
-        f = open("files/av_t_seekFor_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_t_seekFor_v.txt", "r")
         av_t_seekFor = f.readlines()
         f.close()
 
-        f = open("files/acc_t_viewed_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"acc_t_viewed_v.txt", "r")
         acc_t_viewed = f.readlines()
         f.close()
 
-        f = open("files/av_t_viewed_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_t_viewed_v.txt", "r")
         av_t_viewed = f.readlines()
         f.close()
 
-        fileData = open("files/AllVariablesVideo.txt", "a")
+        fileData = open(TEXT_FILES_PATH+"AllVariablesVideo.txt", "a")
 
         fileData.write("VideoId,VideoName,Duration,Plays,Stops,Pauses,SeekBacks,SeekFors,SpeedUps,SpeedDowns,AvSpeedUp,AvSpeedDown,AccTimeReplayed,AccTimeSkipped,AvTimeReplayed,AvTimeSkipped,AccTimeViwed,AvTimeViewed\n")
 
@@ -166,75 +167,75 @@ class WriteData:
         return
 
     def join_video_data_no_redundant(self):
-        f = open("files/title_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"title_v.txt", "r")
         title = f.readlines()
         f.close()
 
-        f = open("files/duration_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"duration_v.txt", "r")
         duration = f.readlines()
         f.close()
 
-        f = open("files/nw_plays_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"nw_plays_v.txt", "r")
         plays = f.readlines()
         f.close()
 
-        f = open("files/nw_stops_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"nw_stops_v.txt", "r")
         stops = f.readlines()
         f.close()
 
-        f = open("files/nw_pauses_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"nw_pauses_v.txt", "r")
         pauses = f.readlines()
         f.close()
 
-        f = open("files/nw_seekBack_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"nw_seekBack_v.txt", "r")
         seekBacks = f.readlines()
         f.close()
 
-        f = open("files/nw_seekFor_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"nw_seekFor_v.txt", "r")
         seekFors = f.readlines()
         f.close()
 
-        f = open("files/nw_speedUp_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"nw_speedUp_v.txt", "r")
         speedUps = f.readlines()
         f.close()
 
-        f = open("files/nw_speedDown_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"nw_speedDown_v.txt", "r")
         speedDowns = f.readlines()
         f.close()
 
-        f = open("files/av_speedUp_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_speedUp_v.txt", "r")
         av_speedUp = f.readlines()
         f.close()
 
-        f = open("files/av_speedDown_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_speedDown_v.txt", "r")
         av_speedDown = f.readlines()
         f.close()
 
-        f = open("files/acc_t_seekBack_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"acc_t_seekBack_v.txt", "r")
         acc_t_seekBack = f.readlines()
         f.close()
 
-        f = open("files/acc_t_seekFor_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"acc_t_seekFor_v.txt", "r")
         acc_t_seekFor = f.readlines()
         f.close()
 
-        f = open("files/av_t_seekBack_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_t_seekBack_v.txt", "r")
         av_t_seekBack = f.readlines()
         f.close()
 
-        f = open("files/av_t_seekFor_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_t_seekFor_v.txt", "r")
         av_t_seekFor = f.readlines()
         f.close()
 
-        f = open("files/acc_t_viewed_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"acc_t_viewed_v.txt", "r")
         acc_t_viewed = f.readlines()
         f.close()
 
-        f = open("files/av_t_viewed_v.txt", "r")
+        f = open(TEXT_FILES_PATH+"av_t_viewed_v.txt", "r")
         av_t_viewed = f.readlines()
         f.close()
 
-        fileData = open("files/NoRedAllVariablesVideo.txt", "a")
+        fileData = open(TEXT_FILES_PATH+"NoRedAllVariablesVideo.txt", "a")
 
         fileData.write("VideoId,VideoName,Duration,Plays,Stops,Pauses,SeekBacks,SeekFors,SpeedUps,SpeedDowns,AvSpeedUp,AvSpeedDown,AccTimeReplayed,AccTimeSkipped,AvTimeReplayed,AvTimeSkipped,AccTimeViwed,AvTimeViewed\n")
 
@@ -265,35 +266,35 @@ class WriteData:
 
     def join_all_stud_data(self):
 
-        f = open("files/n_plays_vs.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_plays_vs.txt", "r")
         playsData = f.readlines()
         f.close
 
-        f = open("files/n_stops_vs.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_stops_vs.txt", "r")
         stopsData = f.readlines()
         f.close
 
-        f = open("files/n_pauses_vs.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_pauses_vs.txt", "r")
         pausesData = f.readlines()
         f.close
 
-        f = open("files/n_seekBack_vs.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_seekBack_vs.txt", "r")
         seekBackData = f.readlines()
         f.close
 
-        f = open("files/n_seekFor_vs.txt", "r")
+        f = open(TEXT_FILES_PATH+"n_seekFor_vs.txt", "r")
         seekFordwardsData = f.readlines()
         f.close
 
-        f = open("files/t_viewed_vs.txt", "r")
+        f = open(TEXT_FILES_PATH+"t_viewed_vs.txt", "r")
         timeData = f.readlines()
         f.close
 
-        f = open("files/quota_viewed_vs.txt", "r")
+        f = open(TEXT_FILES_PATH+"quota_viewed_vs.txt", "r")
         quotasData = f.readlines()
         f.close
 
-        f = open("files/AllVariablesStudent.txt", "a")
+        f = open(TEXT_FILES_PATH+"AllVariablesStudent.txt", "a")
 
         for i in range(len(stopsData)):
             line = ""

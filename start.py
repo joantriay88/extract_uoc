@@ -6,6 +6,7 @@ import VideoData
 import WriteData
 import HeatMap
 import Forum
+from settings import JSON_PATH
 
 initial = Title.Title()
 
@@ -13,7 +14,7 @@ initial = Title.Title()
 initial.printing()
 
 '''***************************** LOAD JSON FILE **************************'''
-jsonfile = open("YOUR_JSON_FILE_PATH")
+jsonfile = open(JSON_PATH, "r")
 print "LOADING .JSON FILE..."
 json_file = json.load(jsonfile)
 print ".JSON FILE LOADED"

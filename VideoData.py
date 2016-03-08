@@ -2,6 +2,7 @@
 import json
 import urllib
 import isodate
+from settings import API_KEY
 
 
 class VideoData:
@@ -255,7 +256,7 @@ class VideoData:
 
         for video in self.ids_video:
             video_id = str(video)
-            api_key = "AIzaSyB1I6cpK4UTwWmkqqiidXncss9Fvmb_CiQ"
+            api_key = API_KEY
             searchUrl = "https://www.googleapis.com/youtube/v3/videos?id="+video_id+"&key="+api_key+"&part=snippet,contentDetails"
             response = urllib.urlopen(searchUrl).read()
             data = json.loads(response)
