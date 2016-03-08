@@ -25,9 +25,8 @@ class HeatMap:
                         old_time = str(elements_events['old_time'])
                         new_time = str(elements_events['new_time'])
                         if old_time != "None" and new_time != "None":
-                            if old_time > new_time:
-                                li_seek = ["seek", old_time, new_time]
-                                dict_video_list_seek[code_video].append(li_seek)
+                            li_seek = ["seek", old_time, new_time]
+                            dict_video_list_seek[code_video].append(li_seek)
 
         for video in self.ids_video:
             youtube_id = video
@@ -52,15 +51,15 @@ class HeatMap:
                     row_float = float(event[1])
                     col_float = float(event[2])
 
-                    if row_float > col_float:
-                        row = int(row_float)/resolution
-                        col = int(col_float)/resolution
+                    # if row_float > col_float:
+                    row = int(row_float)/resolution
+                    col = int(col_float)/resolution
 
-                        if int(row_float) > duration:
-                            row = duration/resolution
-                        if int(col_float) > duration:
-                            col = duration/resolution
-                        li_from_to[row][col] = li_from_to[row][col]+1
+                    if int(row_float) > duration:
+                        row = duration/resolution
+                    if int(col_float) > duration:
+                        col = duration/resolution
+                    li_from_to[row][col] = li_from_to[row][col]+1
 
             file_data = open("heatmaps/tsvs/data_heatmap_"+str(youtube_id)+".tsv", "a")
             file_data.write("row_idx\tcol_idx\trepetitions\n")
@@ -205,7 +204,9 @@ class HeatMap:
                 rows_cols = rows_cols+str(i)+"]"
             i += 1
 
-        html_file.write("  colors = ['#FFFFFF','#F1EEF6','#E6D3E1','#DBB9CD','#D19EB9','#C684A4','#BB6990','#B14F7C','#A63467','#9B1A53','#91003F'];\n")
+        html_file.write("colors_bottom = ['#FFFFFF','#F1EEF6','#E6D3E1','#DBB9CD','#D19EB9','#C684A4','#BB6990','#B14F7C','#A63467','#9B1A53','#91003F'];\n")
+        html_file.write("  colors_top = ['#FFFFFF','#ebebfa','#d6d6f5','#c2c2f0','#adadeb','#9999e6','#8585e0','#7070db','#5c5cd6','#4747d1','#3333cc'];\n")
+        html_file.write("  colors_diagonal = ['#FFFFFF','#e6ffee','#b3ffcc','#80ffaa','#4dff88','#00ff55','#00e64d','#00cc44','#00b33c','#00802b','#006622'];\n")
         html_file.write("  hcrow = "+rows_cols+", // change to gene name or probe id\n")
         html_file.write("  hccol = "+rows_cols+", // change to gene name or probe id\n")
 
