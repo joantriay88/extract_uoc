@@ -8,7 +8,7 @@ class Forum:
 
     def calculate_threads_created(self, json_file):
         lines_thread_created = []
-        line_data = "Username,CommentID,UnicIDThread,UserRole,Title,Body\n"
+        line_data = "Username#CommentID#UnicIDThread#UserRole#Title#Body\n"
         lines_thread_created.append(line_data)
         for line in json_file:
             if "name" in line:
@@ -31,13 +31,13 @@ class Forum:
                             line_users = line_users+";"+str(roles_users)
                             i += 1
 
-                    line_data = username+","+commentable_id+","+u_id+","+line_users+","+title+","+body+"\n"
+                    line_data = username+"#"+commentable_id+"#"+u_id+"#"+line_users+"#"+title+"#"+body+"\n"
                     lines_thread_created.append(line_data)
         return lines_thread_created
 
     def calculate_responses_created(self, json_file):
         lines_response_created = []
-        line_data = "Username,CommentID,UnicIDThread,UnicIDResponse,UserRole,Body\n"
+        line_data = "Username#CommentID#UnicIDThread#UnicIDResponse#UserRole#Body\n"
         lines_response_created.append(line_data)
 
         for line in json_file:
@@ -62,14 +62,14 @@ class Forum:
                             line_users = line_users+";"+str(roles_users)
                             i += 1
 
-                    line_data = username+","+commentable_id+","+thread_u_id+","+u_id+","+line_users+","+body+"\n"
+                    line_data = username+"#"+commentable_id+"#"+thread_u_id+"#"+u_id+"#"+line_users+"#"+body+"\n"
                     lines_response_created.append(line_data)
 
         return lines_response_created
 
     def calculate_comments_created(self, json_file):
         lines_comment_created = []
-        line_data = "Username,CommentId,UnicIdResponse,UnicIdComment,UserRole,Body\n"
+        line_data = "Username#CommentId#UnicIdResponse#UnicIdComment#UserRole#Body\n"
         lines_comment_created.append(line_data)
 
         for line in json_file:
@@ -94,7 +94,7 @@ class Forum:
                             line_users = line_users+";"+str(roles_users)
                             i += 1
 
-                    line_data = username+","+commentable_id+","+response_id+","+u_id+","+line_users+","+body+"\n"
+                    line_data = username+"#"+commentable_id+"#"+response_id+"#"+u_id+"#"+line_users+"#"+body+"\n"
                     lines_comment_created.append(line_data)
 
         return lines_comment_created
