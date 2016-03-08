@@ -23,7 +23,7 @@ class WriteData:
     def writeInFileDictComplexData(self, dict_data, name_file):
         fileToWrite = open("files/"+name_file, 'a')
         for stud in self.usernames:
-            line = ""
+            line = stud+","
             counter_last_element = 1
             for video in self.ids_video:
                 if counter_last_element == len(self.ids_video):
