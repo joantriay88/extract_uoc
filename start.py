@@ -13,7 +13,7 @@ initial = Title.Title()
 initial.printing()
 
 '''***************************** LOAD JSON FILE **************************'''
-jsonfile = open("/Users/LearningAnalytics/Dropbox/jsons/bsc_1.json")
+jsonfile = open("YOUR_JSON_FILE_PATH")
 print "LOADING .JSON FILE..."
 json_file = json.load(jsonfile)
 print ".JSON FILE LOADED"
@@ -49,7 +49,6 @@ print "SYSTEM OBJECTS CREATED"
 
 '''***************************** SYSTEM ****************************'''
 
-'''
 dict_tplays_videos_students, dict_tstops_videos_students, dict_tpauses_videos_students = video_data.calculate_times_plstpa_event(json_file)
 write_data.writeInFileDictComplexData(dict_tplays_videos_students, "n_plays_vs.txt")
 
@@ -121,7 +120,7 @@ write_data.join_video_data_no_redundant()
 write_data.join_all_stud_data()
 
 
-heatmap_data.calculate_matrix(dict_durations_yt_videos, json_file, 7)
+heatmap_data.calculate_matrix(dict_durations_yt_videos, json_file, 15)
 
 
 lines_thread_created = forum_data.calculate_threads_created(json_file)
@@ -132,4 +131,3 @@ write_data.writeInFileStringList(lines_response_created, "Responses_Threads_Foru
 
 lines_comment_created = forum_data.calculate_comments_created(json_file)
 write_data.writeInFileStringList(lines_comment_created, "Comments_Responses_Threads_Forum.txt")
-'''
