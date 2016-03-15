@@ -29,7 +29,7 @@ EXTRACT parse different events, extract different variables and store it in indi
 
  - Video files:
 
-> This files contains different variables related with the evenrs from [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+> This files contains different variables related with some events from [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
 >
 > **n_plays_v.txt** : This file contains the number of plays did in video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with the number of plays and each row represents a video. This file is related with the event [play_video/edx.video.played](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#play-video-edx-video-played) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
 >
