@@ -2,14 +2,14 @@ import os
 
 
 # PATH SETTINGS:
-JSON_PATH = "/Users/LearningAnalytics/Dropbox/jsons/inserlab_2015.json"
+JSON_PATH = "THE_PATH_OF_YOUR_TRACKING_LOGS"
 ABS_PATH = os.path.dirname(os.path.abspath(__file__))
 TEXT_FILES_PATH = "dataExtracted/files/"
 TSVS_HEATMAP_FILES = "dataExtracted/visual/heatmaps/tsvs/"
 HEATMAP_FILES = "dataExtracted/visual/heatmaps/"
 
 # YOUTUBE V3 API KEY
-API_KEY = "AIzaSyB1I6cpK4UTwWmkqqiidXncss9Fvmb_CiQ"
+API_KEY = "YOUR_API_YOUTUBE_V3_KEY"
 
 # COLORS
 HEADER = '\033[95m'
