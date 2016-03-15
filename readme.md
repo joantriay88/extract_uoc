@@ -1,7 +1,7 @@
 EXTRACT
 ===================
 
-EXTRACT is a .JSON parser for [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html) from [Open edX](https://open.edx.org/). That parser extract data from the logs and create a new file for every variable that extract. Normally every variable is referred to a an event from  [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+EXTRACT is a .JSON parser for [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html) from [Open edX](https://open.edx.org/). That parser extract data from the logs and create a new files for every variable that extract. Normally every variable is referred to a an event from  [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
 
 ----------
 
@@ -23,7 +23,7 @@ Then, when you have modified this two variables, with the command line go with `
 
 What data parse?
 -------------
-EXTRACT parse different events, extract different variables and stores it in individual files. This files are stored in the folder `dataExtracted/files` .
+EXTRACT parse different events, extract different variables and store it in individual files. This files are saved in the folder `dataExtracted/files`.
 
 
 
@@ -54,3 +54,19 @@ EXTRACT parse different events, extract different variables and stores it in ind
 >  **Responses_Threads_Forum.txt**: This file contains the different responses of the threads. Every row of this file corresponds to a new response in a thread and it have 6 different columns where we can find different information: Username, CommentID, UnicIDThread, UnicIdResponse, UserRole and Body. This file is related with the event [edx.forum.response.created](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#edx-forum-response-created) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
 >  
 >  **Comments_Responses_Threads_Forum.txt**: This file contains the different comments of responses of the threads. Every row of this file corresponds to a new comment in a response of thread and it have 6 different columns where we can find different information: Username, CommentID, UnicIdResponse, UnicIdComment, UserRole and Body. This file is related with the event [edx.forum.comment.created](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#edx-forum-comment-created) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+
+ - Students files:
+
+> **n_plays_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of plays that student did in a video.  This file is related with the event [play_video/edx.video.played](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#play-video-edx-video-played) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+> 
+> **n_pauses_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of pauses that student did in a video. This file is related with the event [pause_video/edx.video.paused](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#pause-video-edx-video-paused) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+> 
+> **n_stops_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of stops that student did in a video.  This file is related with the event [stop_video/edx.video.stopped](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#stop-video-edx-video-stopped) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+> 
+> **n_seekFor_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of seek forwards that student did in a video.  This file is related with the event [seek_video/edx.video.position.changed](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#seek-video-edx-video-position-changed) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+> 
+> **n_seekBack_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of seek backwards that student did in a video. This file is related with the event [seek_video/edx.video.position.changed](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#seek-video-edx-video-position-changed) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+> 
+>**quota_viewed_vs.txt**: This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the quota of video watched, e.g if the student watched the 50% of a vídeo the number is 0.5 or if the student watched the video two times the number is 2.0.
+>
+> **t_viewed_vs.txt**: This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the time in seconds dedicated to a video.
