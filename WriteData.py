@@ -2,7 +2,7 @@
 from settings import TEXT_FILES_PATH
 
 
-class WriteData:
+class WriteData (object):
     def __init__(self, li_usernames, li_ids_videos):
         self.usernames = li_usernames
         self.ids_video = li_ids_videos
