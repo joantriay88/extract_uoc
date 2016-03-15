@@ -6,47 +6,74 @@ import VideoData
 import WriteData
 import HeatMap
 import Forum
-from settings import JSON_PATH
+from settings import JSON_PATH, PATH_JSON_ERROR, LOADING_JSON_FILE, VALIDATION_JSON_ERROR, LOADED_JSON_FILE, USERNAMES_CALCULATED, IMPOSSIBLE_CALCULATE_USERNAMES, IMPOSSIBLE_CALCULATE_VIDEOIDs, VIDEO_IDs_CALCULATED, SYSTEM_OBJECTS_CREATED, IMPOSSIBLE_CREATE_SYSTEM_OBECTS
+import sys
 
-initial = Title.Title()
 
 '''********************************* WELCOME *******************************'''
+initial = Title.Title()
 initial.printing()
 
 '''***************************** LOAD JSON FILE **************************'''
-jsonfile = open(JSON_PATH, "r")
-print "LOADING .JSON FILE..."
-json_file = json.load(jsonfile)
-print ".JSON FILE LOADED"
+try:
+    jsonfile = open(JSON_PATH, "r")
+    print LOADING_JSON_FILE
+
+except IOError:
+    print PATH_JSON_ERROR
+    sys.exit()
+
+try:
+    json_file = json.load(jsonfile)
+    print LOADED_JSON_FILE
+except ValueError:
+    print VALIDATION_JSON_ERROR
+    sys.exit()
 
 '''***************************** SYSTEM VARIABLES **************************'''
-li_usernames = []
-for line in json_file:
-    if len(line) > 0:
-        if line['username'] not in li_usernames:
-            li_usernames.append(str(line['username']))
 
-print "USERNAMES CALCULATED"
+try:
+    li_usernames = []
+    for line in json_file:
+        if len(line) > 0:
+            if "username" in line:
+                if line['username'] not in li_usernames:
+                    li_usernames.append(str(line['username']))
+    print USERNAMES_CALCULATED
 
-li_ids_video = []
-for line in json_file:
-    if not ("name" not in line):
-        if line['name'] == "stop_video" or line['name'] == "play_video" or line['name'] == "pause_video" or line['name'] == "seek_video":
-            event = line['event']
-            elements_events = json.loads(event)
-            code_video_yt = elements_events['code']
-            if code_video_yt not in li_ids_video:
-                li_ids_video.append(str(code_video_yt))
+except:
+    print IMPOSSIBLE_CALCULATE_USERNAMES
+    sys.exit()
 
-print "VIDEO IDS CALCULATED"
+try:
+    li_ids_video = []
+    for line in json_file:
+        if "name" in line:
+            if line['name'] == "stop_video" or line['name'] == "play_video" or line['name'] == "pause_video" or line['name'] == "seek_video":
+                event = line['event']
+                elements_events = json.loads(event)
+                code_video_yt = elements_events['code']
+                if code_video_yt not in li_ids_video:
+                    li_ids_video.append(str(code_video_yt))
+    print VIDEO_IDs_CALCULATED
+
+except:
+    print IMPOSSIBLE_CALCULATE_VIDEOIDs
+    sys.exit()
+
 
 '''***************************** OBJECTS ****************************'''
-students = StudentData.StudentData()
-video_data = VideoData.VideoData(li_usernames, li_ids_video)
-write_data = WriteData.WriteData(li_usernames, li_ids_video)
-heatmap_data = HeatMap.HeatMap(li_usernames, li_ids_video)
-forum_data = Forum.Forum()
-print "SYSTEM OBJECTS CREATED"
+try:
+    video_data = VideoData.VideoData(li_usernames, li_ids_video)
+    write_data = WriteData.WriteData(li_usernames, li_ids_video)
+    heatmap_data = HeatMap.HeatMap(li_usernames, li_ids_video)
+    forum_data = Forum.Forum()
+    students = StudentData.StudentData()
+    print SYSTEM_OBJECTS_CREATED
+
+except:
+    print IMPOSSIBLE_CREATE_SYSTEM_OBECTS
+    sys.exit()
 
 '''***************************** SYSTEM ****************************'''
 
