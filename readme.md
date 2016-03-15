@@ -28,6 +28,7 @@ EXTRACT parse different events, extract different variables and store it in indi
 
 
  - Video files:
+
 > This files contains different variables related with an event from 
 > 
 > **n_plays_v.txt** : This file contains the number of plays did in video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with the number of plays and each row represents a video. This file is related with the event [play_video/edx.video.played](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#play-video-edx-video-played) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
@@ -47,6 +48,7 @@ EXTRACT parse different events, extract different variables and store it in indi
 > **duration_v.txt** : This file contains the different durations in seconds of each video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with duration in seconds and each row represents a video.
 
  - Forum files:
+
 > This files contains different variables related with the forum events. 
 > 
 >  **Threads_Forum.txt**: This file contains the different comment threads in forum created by the students. Every row of this file corresponds to a new thread and it have 6 different columns where we can find different information: Username, CommentID, UnicIDThread, UserRole, Title and Body. This file is related with the event [edx.forum.thread.created](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#edx-forum-thread-created) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
@@ -56,7 +58,9 @@ EXTRACT parse different events, extract different variables and store it in indi
 >  **Comments_Responses_Threads_Forum.txt**: This file contains the different comments of responses of the threads. Every row of this file corresponds to a new comment in a response of thread and it have 6 different columns where we can find different information: Username, CommentID, UnicIdResponse, UnicIdComment, UserRole and Body. This file is related with the event [edx.forum.comment.created](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#edx-forum-comment-created) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
 
  - Students files:
-
+ 
+>This files contains information about the participation and about the interaction during the mooc.
+>
 > **n_plays_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of plays that student did in a video.  This file is related with the event [play_video/edx.video.played](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#play-video-edx-video-played) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
 > 
 > **n_pauses_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of pauses that student did in a video. This file is related with the event [pause_video/edx.video.paused](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#pause-video-edx-video-paused) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
