@@ -3,7 +3,7 @@ import json
 from settings import ABS_PATH, TSVS_HEATMAP_FILES, HEATMAP_FILES
 
 
-class HeatMap:
+class HeatMap (object):
 
     def __init__(self, li_usernames, li_ids_videos):
         self.usernames = li_usernames
