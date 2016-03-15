@@ -5,7 +5,7 @@ import isodate
 from settings import API_KEY
 
 
-class VideoData:
+class VideoData (object):
 
     def __init__(self, li_usernames, li_ids_videos):
         self.usernames = li_usernames
