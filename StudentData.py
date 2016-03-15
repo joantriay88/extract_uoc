@@ -1,4 +1,4 @@
-class StudentData:
+class StudentData (object):
     def __init__(slef):
         pass
 
