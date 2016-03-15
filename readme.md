@@ -29,48 +29,48 @@ EXTRACT parse different events, extract different variables and store it in indi
 
  - Video files:
 
-> This files contains different variables related with an event from 
-> 
+> This files contains different variables related with the evenrs from [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
+>
 > **n_plays_v.txt** : This file contains the number of plays did in video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with the number of plays and each row represents a video. This file is related with the event [play_video/edx.video.played](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#play-video-edx-video-played) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_pauses_v.txt** : This file contains the number of pauses did in a video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with the number of pauses and each row represents a video. This file is related with the event [pause_video/edx.video.paused](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#pause-video-edx-video-paused) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_stops_v.txt** : This file contains number of stops did in a video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with the number of stops and each row represents a video. This file is related with the event [stop_video/edx.video.stopped](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#stop-video-edx-video-stopped) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_seekFor_v.txt** : This file contains the number of seeks forward did in a video. Is structured in two columns and different rows, the first column is referred to the youtube code and the second column is related with the number of seeks forward and each row represents a video. This file is related with the event [seek_video/edx.video.position.changed](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#seek-video-edx-video-position-changed) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_seekBack_v.txt** : This file contains the number of seeks backward did in a video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with the number of seeks backward and each row represents a video. This file is related with the event [seek_video/edx.video.position.changed](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#seek-video-edx-video-position-changed) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_speedDown_v.txt** : This file contains the number of speed downs did in a video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with the number of speed downs and each row represents a video. This file is related with the event [speed_change_video](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#speed-change-video) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_speedUp_v.txt** : This file contains the number of speed ups did in a video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with the number of speed ups and each row represents a video. This file is related with the event [speed_change_video](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#speed-change-video) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **duration_v.txt** : This file contains the different durations in seconds of each video. Is structured in two columns and different rows, the first column is referred to the youtube code, the second column is related with duration in seconds and each row represents a video.
 
  - Forum files:
 
-> This files contains different variables related with the forum events. 
-> 
+> This files contains different variables related with the forum events.
+>
 >  **Threads_Forum.txt**: This file contains the different comment threads in forum created by the students. Every row of this file corresponds to a new thread and it have 6 different columns where we can find different information: Username, CommentID, UnicIDThread, UserRole, Title and Body. This file is related with the event [edx.forum.thread.created](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#edx-forum-thread-created) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
->  
+>
 >  **Responses_Threads_Forum.txt**: This file contains the different responses of the threads. Every row of this file corresponds to a new response in a thread and it have 6 different columns where we can find different information: Username, CommentID, UnicIDThread, UnicIdResponse, UserRole and Body. This file is related with the event [edx.forum.response.created](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#edx-forum-response-created) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
->  
+>
 >  **Comments_Responses_Threads_Forum.txt**: This file contains the different comments of responses of the threads. Every row of this file corresponds to a new comment in a response of thread and it have 6 different columns where we can find different information: Username, CommentID, UnicIdResponse, UnicIdComment, UserRole and Body. This file is related with the event [edx.forum.comment.created](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#edx-forum-comment-created) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
 
  - Students files:
- 
->This files contains information about the participation and about the interaction during the mooc.
+
+>This files contains information about the participats and about their interaction during the mooc.
 >
 > **n_plays_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of plays that student did in a video.  This file is related with the event [play_video/edx.video.played](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#play-video-edx-video-played) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_pauses_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of pauses that student did in a video. This file is related with the event [pause_video/edx.video.paused](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#pause-video-edx-video-paused) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_stops_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of stops that student did in a video.  This file is related with the event [stop_video/edx.video.stopped](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#stop-video-edx-video-stopped) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_seekFor_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of seek forwards that student did in a video.  This file is related with the event [seek_video/edx.video.position.changed](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#seek-video-edx-video-position-changed) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 > **n_seekBack_vs.txt** : This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the number of seek backwards that student did in a video. This file is related with the event [seek_video/edx.video.position.changed](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html#seek-video-edx-video-position-changed) from edX [tracking logs](http://edx.readthedocs.org/projects/devdata/en/latest/internal_data_formats/tracking_logs.html).
-> 
+>
 >**quota_viewed_vs.txt**: This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the quota of video watched, e.g if the student watched the 50% of a vídeo the number is 0.5 or if the student watched the video two times the number is 2.0.
 >
 > **t_viewed_vs.txt**: This file contains a matrix where the rows represents the students and the columns the videos, except the first column that is the usernames. In te matrix, every number is the time in seconds dedicated to a video.
